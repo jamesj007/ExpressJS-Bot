@@ -1,0 +1,21 @@
+{
+  "name": "learn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hello.js",
+  "dependencies": {
+    "@google/maps": "^0.4.1",
+    "body-parser": "^1.17.2",
+    "bot": "0.0.3",
+    "configs.json": "0.0.4",
+    "express": "^4.15.3",
+    "request": "^2.81.0",
+    "requirejs": "^2.3.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "JJ",
+  "license": "ISC"
+}
