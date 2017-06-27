@@ -5,93 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<!-- include the bootstrap CDN as well as jQuery for a quick front-page -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="styles/main.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script src="bot.js"></script>
-
-  <script>
-    var user = {
-        //color: "black",
-        //message: "",
-        isSpeaking: true
-    };
-    var userInput, replyInput = "";
-    var secReply = "";
-    $(document).ready(function(){
-
-      //var usr = true;
-      $("#sendBtn").click(function(){
-        userInput=$("#mainChat").val() + "";
-        $("#mainChat").val("");
-        if (user.isSpeaking){
-            replyInput = "User: " + userInput + "\n";
-            //usr = false;
-            $('#chat').val( $('#chat').val() + replyInput);
-            //user.isSpeaking = false;
-        }
-
-        /*
-        $.post("http://localhost:3000/",{usrInput: userInput}).then(response => {
-            console.log(response + " after")
-        });
-        */
-
-        $.ajax({
-            url: "/",
-            type: "POST",
-            dataType: "json",
-            data: {usrInput: userInput},
-            //contentType: "application/json",
-            cache: false,
-            timeout: 5000,
-            complete: function() {
-              //called when complete
-              //console.log(data);
-              console.log('process complete');
-            },
-
-            success: function(data) {
-              console.log(data['reply'][0]);
-              console.log(data['reply'][1]);
-              //$('#chat').val(replyInput);
-              setTimeout(function(){
-                  if (data['reply'][0] !== ""){
-                      replyInput = "Bot: " + data['reply'][0] + '\n';
-                  }
-                  secReply = "Bot: " + data['reply'][1] + '\n';
-                  $('#chat').val( $('#chat').val() + replyInput);
-
-              }, 1300);
-
-              if (data['reply'][1] !== '') {
-                  if (data['reply'][1] === 'start_to_clear'){
-                      $('#chat').val('');
-                  } else {
-                      setTimeout(function(){
-                          $('#chat').val( $('#chat').val() + secReply);
-                      }, 3000);
-                  }
-              }
-
-              //$("#msg1").text(replyInput);
-              console.log('process sucess');
-            },
-
-            error: function() {
-              console.log('process error');
-            },
-          });
-
-        });
-        console.log(replyInput);
-
-
-
-      //$('#Name').val('testName');
-    });
-  </script>
+  <script src= "sendreq.js"></script>
 
 </head>
 <body>
@@ -109,7 +29,7 @@
     </div>
 
     <div class="input-group" id = "some_input">
-        <input type="text" class="form-control" id= "mainChat" placeholder="Interact!!">
+        <input type="text" class="form-control" id= "mainInput" placeholder="Interact!!">
         <span class="input-group-btn">
             <button class="btn btn-default" id= "sendBtn" type="button">Send</button>
         </span>

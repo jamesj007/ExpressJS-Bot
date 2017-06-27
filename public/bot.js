@@ -1,3 +1,5 @@
+
+//send the bot reply back to the view
 module.exports = function(){
     //var regex = new RegExp("(h+e+l+o+)$|(h+e+y+)$, i");
 
