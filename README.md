@@ -1,7 +1,7 @@
-# Express-Bot-
+# Express-Bot
 Simple bot that is implemented through Express. Primarily for learning JavaScript in my free time.
 
-It was another attempt to learn NodeJS as well as JavaScript. Some clean-up and commenting is necessary as of now. 
+It was another attempt to learn ExpressJS as well as JavaScript. Some clean-up and commenting is necessary as of now. 
 
 Typing in stuff like "Hey" or "Hello" are recognized by the bot through regexes and the appropriate response is given. 
 
