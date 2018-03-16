@@ -41,6 +41,7 @@ $(document).ready(function(){
 
           //UGLY: Primarily used to make the bot wait a bit before outputting result to emulate a "thinking" effect.
           setTimeout(function(){
+              //output first bot response to chat
               if (data['reply'][0] !== ""){
                   replyInput = "Bot: " + data['reply'][0] + '\n';
               }
@@ -49,10 +50,12 @@ $(document).ready(function(){
 
           }, 1300);
 
+            //if bot has additional stuff to say
           if (data['reply'][1] !== '') {
               if (data['reply'][1] === 'start_to_clear'){
                   $('#chat').val('');
               } else {
+                  //show the rest of conversation after 3s.
                   setTimeout(function(){
                       $('#chat').val( $('#chat').val() + secReply);
                   }, 3000);
